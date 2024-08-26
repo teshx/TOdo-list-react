@@ -5,9 +5,9 @@ function Todo() {
   const [todos, setTodos] = useState([]);
   const [input, setinput] = useState("");
   const geneerated = () => {
-    return Math.floor(Math.random() * 10);
+    return Math.floor(Math.random() * 10000);
   };
-  console.log(input);
+
   const Handelsubmit = () => {
     setTodos((todos) =>
       todos.concat({
@@ -32,7 +32,7 @@ function Todo() {
 
       <ul className="todolist">
         {todos.map(({ text, id }) => (
-          <li key={id}>
+          <li key={id} className="todo">
             <span>{text}</span>
             <button className="close" onClick={() => removeTodo(id)}>
               X
